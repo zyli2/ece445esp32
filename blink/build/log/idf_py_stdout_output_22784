@@ -1,0 +1,93 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2ee4
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar  9 2025 16:45:05[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bc40h ( 48192) map[0m
+[0;32mI (97) esp_image: segment 1: paddr=0001bc68 vaddr=3fc93a00 size=02cfch ( 11516) load[0m
+[0;32mI (99) esp_image: segment 2: paddr=0001e96c vaddr=40374000 size=016ach (  5804) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1b61ch (112156) map[0m
+[0;32mI (130) esp_image: segment 4: paddr=0003b644 vaddr=403756ac size=0e270h ( 57968) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=000498bc vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (161) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (171) app_init: Application information:[0m
+[0;32mI (171) app_init: Project name:     blink[0m
+[0;32mI (175) app_init: App version:      1[0m
+[0;32mI (178) app_init: Compile time:     Mar  9 2025 16:43:33[0m
+[0;32mI (183) app_init: ELF file SHA256:  b4e5e3e08...[0m
+[0;32mI (187) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (191) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (195) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (199) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (203) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (209) heap_init: At 3FC96FD8 len 00052738 (329 KiB): RAM[0m
+[0;32mI (214) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (219) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (224) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (231) spi_flash: detected chip: generic[0m
+[0;32mI (233) spi_flash: flash io: dio[0m
+[0;33mW (236) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (249) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (255) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (262) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (282) example: Example configured to blink addressable LED![0m
+[0;32mI (282) example: Turning the LED OFF![0m
+[0;32mI (1282) example: Turning the LED ON![0m
+[0;32mI (2282) example: Turning the LED OFF![0m
+[0;32mI (3282) example: Turning the LED ON![0m
+[0;32mI (4282) example: Turning the LED OFF![0m
+[0;32mI (5282) example: Turning the LED ON![0m
+[0;32mI (6282) example: Turning the LED OFF![0m
+[0;32mI (7282) example: Turning the LED ON![0m
+[0;32mI (8282) example: Turning the LED OFF![0m
+[0;32mI (9282) example: Turning the LED ON![0m
+[0;32mI (10282) example: Turning the LED OFF![0m
+[0;32mI (11282) example: Turning the LED ON![0m
+[0;32mI (12282) example: Turning the LED OFF![0m
+[0;32mI (13282) example: Turning the LED ON![0m
+[0;32mI (14282) example: Turning the LED OFF![0m
+[0;32mI (15282) example: Turning the LED ON![0m
+[0;32mI (16282) example: Turning the LED OFF![0m
+[0;32mI (17282) example: Turning the LED ON![0m
+[0;32mI (18282) example: Turning the LED OFF![0m
+[0;32mI (19282) example: Turning the LED ON![0m
+[0;32mI (20282) example: Turning the LED OFF![0m
+[0;32mI (21282) example: Turning the LED ON![0m
+[0;32mI (22282) example: Turning the LED OFF![0m
+[0;32mI (23282) example: Turning the LED ON![0m
+[0;32mI (24282) example: Turning the LED OFF![0m
+[0;32mI (25282) example: Turning the LED ON![0m
+[0;32mI (26282) example: Turning the LED OFF![0m
+[0;32mI (27282) example: Turning the LED ON![0m
+[0;32mI (28282) example: Turning the LED OFF![0m
+[0;32mI (29282) example: Turning the LED ON![0m
+[0;32mI (30282) example: Turning the LED OFF![0m
+[0;32mI (31282) example: Turning the LED ON![0m
+[0;32mI (32282) example: Turning the LED OFF![0m
+[0;32mI (33282) example: Turning the LED ON![0m
+[0;32mI (34282) example: Turning the LED OFF![0m

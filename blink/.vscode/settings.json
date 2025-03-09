@@ -1,0 +1,10 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "idf.espIdfPathWin": "C:\\Users\\ankum\\esp\\v5.4\\esp-idf",
+    "idf.toolsPathWin": "C:\\Users\\ankum\\.espressif",
+    "idf.pythonInstallPath": "C:\\Users\\ankum\\.espressif\\tools\\idf-python\\3.11.2\\python.exe",
+    "idf.customExtraVars": {
+        "IDF_TARGET": "esp32s3"
+    },
+    "idf.portWin": "COM4"
+}
