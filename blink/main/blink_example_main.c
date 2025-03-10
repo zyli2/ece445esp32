@@ -13,6 +13,13 @@
 #include "esp_log.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
+#include "string.h"
+#include "stdlib.h"
+#include "esp_system.h"
+#include "esp_console.h"
+#include "esp_vfs_dev.h"
+#include "driver/uart.h"
+#include "linenoise/linenoise.h"
 
 static const char *TAG = "example";
 
@@ -37,7 +44,7 @@ static void blink_led(void)
         led_strip_refresh(led_strip);
     } else {
         /* Set all LED off to clear all pixels */
-        led_strip_clear(led_strip);
+        // led_strip_clear(led_strip);
     }
 }
 
@@ -88,17 +95,106 @@ static void configure_led(void)
 #error "unsupported LED type"
 #endif
 
+// void app_main(void)
+// {
+
+//     /* Configure the peripheral according to the LED type */
+//     configure_led();
+
+//     while (1) {
+//         ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
+//         blink_led();
+//         /* Toggle the LED state */
+//         s_led_state = !s_led_state;
+//         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+//     }
+// }
+
 void app_main(void)
 {
+    int cmd_led_on(int argc, char **argv)
+    {
+        s_led_state = 1;
+        blink_led();
+        ESP_LOGI(TAG, "LED turned ON");
+        return 0; // success
+    }
 
-    /* Configure the peripheral according to the LED type */
+    int cmd_led_off(int argc, char **argv)
+    {
+        s_led_state = 0;
+        blink_led();
+        ESP_LOGI(TAG, "LED turned OFF");
+        return 0; // success
+    }
+
     configure_led();
+    ESP_LOGI(TAG, "LED configured. Console-based control starting...");
+
+    {
+        const uart_config_t uart_config = {
+            .baud_rate = 115200,
+            .data_bits = UART_DATA_8_BITS,
+            .parity    = UART_PARITY_DISABLE,
+            .stop_bits = UART_STOP_BITS_1,
+            .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+            .source_clk = UART_SCLK_DEFAULT,
+        };
+        ESP_ERROR_CHECK(uart_driver_install(UART_NUM_0, 256, 0, 0, NULL, 0));
+        ESP_ERROR_CHECK(uart_param_config(UART_NUM_0, &uart_config));
+        esp_vfs_dev_uart_use_driver(UART_NUM_0);
+    }
+
+    {
+        esp_console_config_t console_config = {
+            .max_cmdline_length = 256,
+            .max_cmdline_args = 8,
+#if CONFIG_LOG_COLORS
+            .hint_color = atoi(LOG_COLOR_CYAN),
+#endif
+            .hint_bold = 1
+        };
+        ESP_ERROR_CHECK(esp_console_init(&console_config));
+    }
+
+    linenoiseSetMultiLine(1);
+    linenoiseHistorySetMaxLen(50); 
+
+    {
+        const esp_console_cmd_t led_on_cmd = {
+            .command = "led_on",
+            .help = "Turn the LED on",
+            .hint = NULL,
+            .func = &cmd_led_on,
+        };
+        ESP_ERROR_CHECK(esp_console_cmd_register(&led_on_cmd));
+
+        const esp_console_cmd_t led_off_cmd = {
+            .command = "led_off",
+            .help = "Turn the LED off",
+            .hint = NULL,
+            .func = &cmd_led_off,
+        };
+        ESP_ERROR_CHECK(esp_console_cmd_register(&led_off_cmd));
+    }
+
+    ESP_LOGI(TAG, "Type 'led_on' or 'led_off' and press ENTER to control the LED.");
 
     while (1) {
-        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
-        blink_led();
-        /* Toggle the LED state */
-        s_led_state = !s_led_state;
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+        char *line = linenoise("cmd> ");
+        if (line == NULL) {
+            continue;
+        }
+
+        if (strlen(line) > 0) {
+            linenoiseHistoryAdd(line);
+        }
+
+        int ret = esp_console_run(line, NULL);
+        if (ret != ESP_OK) {
+            ESP_LOGW(TAG, "Command returned an error: %d", ret);
+        }
+
+        linenoiseFree(line);
     }
 }

@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/ankum/OneDrive/Desktop/ECE 445/blink/build/esp-idf/esp_system/port/cmake_install.cmake")
+  include("C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/esp_system/port/cmake_install.cmake")
 endif()
 

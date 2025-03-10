@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ankum/OneDrive/Desktop/ECE 445/blink/main
+# Install script for directory: C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

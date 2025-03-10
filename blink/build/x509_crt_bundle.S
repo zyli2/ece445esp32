@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/ankum/OneDrive/Desktop/ECE 445/blink/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

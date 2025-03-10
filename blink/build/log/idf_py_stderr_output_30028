@@ -1,0 +1,63 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4200baba: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257 (discriminator 1)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x4200bab7: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257
+0x4200b856: app_main at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:193
+0x42027d0b: main_task at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4037c669: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b54: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x4200baba: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257 (discriminator 1)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x4200bab7: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257
+0x4200b856: app_main at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:193
+0x42027d0b: main_task at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4037c669: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b54: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x4200baba: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257 (discriminator 1)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x4200bab7: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257
+0x4200b856: app_main at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:193
+0x42027d0b: main_task at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4037c669: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b54: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x4200baba: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257 (discriminator 1)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x4200bab7: esp_console_run at C:/Users/ankum/esp/v5.4/esp-idf/components/console/commands.c:257
+0x4200b856: app_main at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:193
+0x42027d0b: main_task at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4037c669: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b54: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0m
+Traceback (most recent call last):
+  File "C:\Users\ankum\esp\v5.4\esp-idf\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "subprocess.py", line 550, in run
+  File "subprocess.py", line 1199, in communicate
+  File "subprocess.py", line 1262, in wait
+  File "subprocess.py", line 1543, in _wait
+KeyboardInterrupt
