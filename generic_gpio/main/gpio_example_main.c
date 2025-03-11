@@ -18,8 +18,15 @@
  #include "esp_vfs_dev.h"
  #include "linenoise/linenoise.h"
  #include "driver/uart.h"
+ #include "stdbool.h"
+
+#define try bool __HadError=false;
+#define catch(x) if(__HadError)
  
 #define GPIO_OUTPUT_PIN 18
+
+static const char *TAG = "turn heating device on / off";
+static int heat_state = 0;
 
  static void set_gpio_level(int level)
  {
@@ -30,12 +37,14 @@
  static int cmd_gpio_on(int argc, char **argv)
  {
      set_gpio_level(1);
+     heat_state = 1;
      return 0;
  }
  
  static int cmd_gpio_off(int argc, char **argv)
  {
      set_gpio_level(0);
+     heat_state = 0;
      return 0;
  }
  
@@ -98,18 +107,25 @@
          ESP_ERROR_CHECK(esp_console_cmd_register(&gpio_off_cmd));
      }
  
-     ESP_LOGI(TAG, "Type 'gpio_on' or 'gpio_off' and press ENTER to control the output.");
+     ESP_LOGI(TAG, "Type 'on' or 'off' and press ENTER to control the output. Current val is %d", heat_state);
 
      while (1) {
          char *line = linenoise("cmd> ");
          if (line == NULL) {
              continue;
          }
-         if (strlen(line) > 0) {
-             linenoiseHistoryAdd(line);
-         }
- 
-         int ret = esp_console_run(line, NULL);
+
+         ESP_LOGI(TAG, "line value is %s", line);
+
+        //  try {
+        //     if (strlen(line) > 0) {
+                linenoiseHistoryAdd(line);
+        //     }
+        //  } catch (Exception e) {
+        //     continue;
+        //  }
+        int random_integer = 0;
+         int ret = esp_console_run(line, &random_integer);
          if (ret != ESP_OK) {
              ESP_LOGI(TAG, "Command returned error code: %d", ret);
          }
