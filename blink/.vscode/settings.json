@@ -9,5 +9,8 @@
     "idf.portWin": "COM4",
     "idf.openOcdConfigs": [
         "board/esp32s3-builtin.cfg"
-    ]
+    ],
+    "files.associations": {
+        "util.h": "c"
+    }
 }

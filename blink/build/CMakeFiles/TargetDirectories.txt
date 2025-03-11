@@ -558,6 +558,7 @@ C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/esp_wifi
 C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/esp_wifi/CMakeFiles/install.dir
 C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/esp_wifi/CMakeFiles/install/local.dir
 C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/esp_wifi/CMakeFiles/install/strip.dir
+C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/bt/CMakeFiles/edit_cache.dir
 C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/bt/CMakeFiles/list_install_components.dir

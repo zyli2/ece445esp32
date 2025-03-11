@@ -1,0 +1,9 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Processing 2 dependencies:
+NOTICE: [1/2] espressif/led_strip (2.5.5)
+NOTICE: [2/2] idf (5.4.0)
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+C:\Users\ankum\.espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -S"C:\Users\ankum\OneDrive\Desktop\ECE 445\ece445esp32\blink" -B"C:\Users\ankum\OneDrive\Desktop\ECE 445\ece445esp32\blink\build"

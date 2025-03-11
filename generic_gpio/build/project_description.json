@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "generic_gpio",
-    "project_version":    "d8beab4-dirty",
+    "project_version":    "fca1492-dirty",
     "project_path":       "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/generic_gpio",
     "idf_path":           "C:/Users/ankum/esp/v5.4/esp-idf",
     "build_dir":          "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/generic_gpio/build",
