@@ -47,7 +47,7 @@
 3084	4524	7634170007729414	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_utility.c.obj	e00355e9f6164731
 3191	4548	7634170008794468	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_common.c.obj	14e0fd739114ee4b
 2715	3808	7634170004035794	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_fields.c.obj	447be7fa84453e7e
-49	44081	7634201679010750	build.ninja	2d6f3a96245e9726
+20	51113	7634216958297734	build.ninja	2d6f3a96245e9726
 7397	8049	7634170050850963	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/adc_periph.c.obj	70456216f33148be
 2907	3973	7634170005950102	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_utility.c.obj	921eecda7edfa2a6
 3031	4188	7634170007201191	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/src/esp_efuse_fields.c.obj	87d266be6096865a
@@ -116,14 +116,32 @@
 11129	11886	7634170088178057	bootloader.elf	32df94d173057c9d
 11886	12391	7634170100695600	.bin_timestamp	b08c48e6a5606045
 11886	12391	7634170100695600	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/.bin_timestamp	b08c48e6a5606045
-95	266	7634199653841167	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-95	266	7634199653841167	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-25	8732	7634201679010750	build.ninja	2d6f3a96245e9726
-55	158	7634201679976893	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-55	158	7634201679976893	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-39	148	7634204831855337	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-39	148	7634204831855337	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-39	163	7634205164005083	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-39	163	7634205164005083	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-39	148	7634206412129251	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
-39	148	7634206412129251	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+41	146	7634211570594528	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+41	146	7634211570594528	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+28	7641	7634216958297734	build.ninja	2d6f3a96245e9726
+53	141	7634216959239217	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+53	141	7634216959239217	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+41	165	7634220755594129	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+41	165	7634220755594129	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+36	141	7634221117623488	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+36	141	7634221117623488	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+41	171	7634221996366187	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+41	171	7634221996366187	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+38	140	7634223441961816	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+38	140	7634223441961816	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+42	166	7634223647519671	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+42	166	7634223647519671	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+48	164	7634223921113408	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+48	164	7634223921113408	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+45	173	7634224846077366	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+45	173	7634224846077366	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+45	159	7634225495408791	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+45	159	7634225495408791	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+62	223	7634227079469845	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+62	223	7634227079469845	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+49	172	7634227406975592	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+49	172	7634227406975592	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+43	157	7634227710518348	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+43	157	7634227710518348	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+44	166	7634228047999023	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8
+44	166	7634228047999023	C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	cc64722811dd4b8

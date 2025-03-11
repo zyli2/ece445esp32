@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "blink",
-    "project_version":    "fca1492-dirty",
+    "project_version":    "5e599e2-dirty",
     "project_path":       "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink",
     "idf_path":           "C:/Users/ankum/esp/v5.4/esp-idf",
     "build_dir":          "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build",
@@ -1210,7 +1210,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__led_strip" ],
             "file": "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c" ],
+            "sources": [ "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/gap.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
