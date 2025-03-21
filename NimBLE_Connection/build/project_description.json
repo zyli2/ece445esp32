@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "nimble_connection",
-    "project_version":    "5b4487c-dirty",
+    "project_version":    "6132e98-dirty",
     "project_path":       "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_Connection",
     "idf_path":           "C:/Users/ankum/esp/v5.4/esp-idf",
     "build_dir":          "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_Connection/build",

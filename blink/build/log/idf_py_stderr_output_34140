@@ -1,0 +1,747 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM7 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM7 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40048839: uart_tx_one_char_uart in ROM
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x420078d3: uart_ll_get_txfifo_len at C:/Users/ankum/esp/v5.4/esp-idf/components/hal/esp32s3/include/hal/uart_ll.h:410
+ (inlined by) uart_tx_char at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:170
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33m--- Warning: Writing to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375be1: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x4038041d: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40386f7d: __assert_func at C:/Users/ankum/esp/v5.4/esp-idf/components/newlib/assert.c:80
+0x4200afef: ble_svc_gatt_init at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/src/ble_svc_gatt.c:234 (discriminator 1)
+0x4200aa2e: on_stack_sync at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:204
+0x4200b86b: ble_hs_sync at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:373
+0x4200ba03: ble_hs_start at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:681
+0x4200ba0b: ble_hs_event_start_stage2 at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:581
+0x42052627: npl_freertos_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:451
+0x40377222: ble_npl_event_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:185
+ (inlined by) nimble_port_run at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:309
+0x4200a9ff: nimble_host_task at C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/blink/main/blink_example_main.c:221
+0x40380e7d: vPortTaskWrapper at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40375b20: esp_restart_noos at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0m
+Traceback (most recent call last):
+  File "C:\Users\ankum\esp\v5.4\esp-idf\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "subprocess.py", line 550, in run
+  File "subprocess.py", line 1199, in communicate
+  File "subprocess.py", line 1262, in wait
+  File "subprocess.py", line 1543, in _wait
+KeyboardInterrupt
