@@ -1,10 +1,1 @@
-0000000000000000000000000000000000000000 4c6aee987e7ae50f9dced63f96373d768a35bc3d sauron67 <kumar67@illinois.edu> 1741557946 -0500	clone: from https://github.com/zyli2/ece445esp32.git
-4c6aee987e7ae50f9dced63f96373d768a35bc3d 74cba1dab151cd938e7db215788f40dd24044a55 sauron67 <kumar67@illinois.edu> 1741558009 -0500	commit: initial commit to blink LEDs
-74cba1dab151cd938e7db215788f40dd24044a55 e61eafab83e18a20a1ace50e974779653b94e69a ankumar8164 <ankumar8164@gmail.com> 1741558817 -0500	commit: test commit
-e61eafab83e18a20a1ace50e974779653b94e69a 3d60bd238a693c2d38fbfd0d2f9b2e590a9384ff ankumar8164 <ankumar8164@gmail.com> 1741621683 -0500	commit: added ability to turn LED on from user input
-3d60bd238a693c2d38fbfd0d2f9b2e590a9384ff ae27e59fc09b6431cbf869b96089d38bcd56c4c9 ankumar8164 <ankumar8164@gmail.com> 1741643931 -0500	commit: example for GPIO pin interactions
-ae27e59fc09b6431cbf869b96089d38bcd56c4c9 d8beab4eea4b4a9f273367452f11c97cb343e372 ankumar8164 <ankumar8164@gmail.com> 1741647407 -0500	commit: added ability to edit GPIO output based on user input
-d8beab4eea4b4a9f273367452f11c97cb343e372 fca1492ff195b88eab51d48e4299babcd67614f2 ankumar8164 <ankumar8164@gmail.com> 1741654754 -0500	commit: fixed bug with console run in gpio setting
-fca1492ff195b88eab51d48e4299babcd67614f2 5e599e2cb75cde3ad75b683f9708dabe47e4e190 ankumar8164 <ankumar8164@gmail.com> 1741717562 -0500	commit: made attempts to add Bluetooth control over LED blinking
-5e599e2cb75cde3ad75b683f9708dabe47e4e190 5b4487cc89a54fee1df90f7709dea62b1777b31e ankumar8164 <ankumar8164@gmail.com> 1741719836 -0500	commit: fixed compilation errors for build
-5b4487cc89a54fee1df90f7709dea62b1777b31e 6132e981c311f96839fb8cdc28d79e6f7f5dbcde ankumar8164 <ankumar8164@gmail.com> 1741741224 -0500	commit: added ability to turn motor on / off via Bluetooth
+59094dda80e429efa8aff0a96bcc69a65853e4f6

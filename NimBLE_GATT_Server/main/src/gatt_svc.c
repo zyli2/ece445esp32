@@ -9,6 +9,40 @@
 #include "heart_rate.h"
 #include "led.h"
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+static TaskHandle_t s_led_blink_task_handle = NULL;
+static bool s_led_blink_active = false; // 'true' = do the 15s ON / 45s OFF cycle
+
+static void led_blink_task(void *arg)
+{
+    while (1) {
+        if (s_led_blink_active) {
+            // Turn LED on for 15s
+            led_on();
+            bool is_off = false;
+            for (int i = 0; i < 15; i++) {
+                vTaskDelay(pdMS_TO_TICKS(1000));
+                if (!s_led_blink_active) {
+                    is_off = true;
+                    break;
+                }
+            }
+            if (is_off) {
+                continue;
+            }
+        
+            // Turn LED off for 45s
+            led_off();
+            vTaskDelay(pdMS_TO_TICKS(45000));
+        } else {
+            led_off();
+            vTaskDelay(pdMS_TO_TICKS(1000));
+        }
+    }
+}
+
 /* Private function declarations */
 static int heart_rate_chr_access(uint16_t conn_handle, uint16_t attr_handle,
                                  struct ble_gatt_access_ctxt *ctxt, void *arg);
@@ -139,11 +173,12 @@ static int led_chr_access(uint16_t conn_handle, uint16_t attr_handle,
             if (ctxt->om->om_len == 1) {
                 /* Turn the LED on or off according to the operation bit */
                 if (ctxt->om->om_data[0]) {
-                    led_on();
-                    ESP_LOGI(TAG, "led turned on!");
+                    s_led_blink_active = true;
+                    ESP_LOGI(TAG, "LED BLINK cycle enabled (15s ON, 45s OFF).");
                 } else {
+                    s_led_blink_active = false;
                     led_off();
-                    ESP_LOGI(TAG, "led turned off!");
+                    ESP_LOGI(TAG, "LED BLINK cycle disabled. LED is off.");
                 }
             } else {
                 goto error;
@@ -263,6 +298,17 @@ int gatt_svc_init(void) {
     rc = ble_gatts_add_svcs(gatt_svr_svcs);
     if (rc != 0) {
         return rc;
+    }
+
+    if (s_led_blink_task_handle == NULL) {
+        xTaskCreate(
+            led_blink_task,
+            "led_blink_task",
+            2048,
+            NULL,
+            5,
+            &s_led_blink_task_handle
+        );
     }
 
     return 0;

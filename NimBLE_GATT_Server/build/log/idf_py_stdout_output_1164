@@ -1,0 +1,189 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2ee4
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar 24 2025 16:43:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=146e8h ( 83688) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=00024710 vaddr=3fc9a200 size=0453ch ( 17724) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=00028c54 vaddr=40374000 size=073c4h ( 29636) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=587d0h (362448) map[0m
+[0;32mI (178) esp_image: segment 4: paddr=000887f8 vaddr=4037b3c4 size=0ed40h ( 60736) load[0m
+[0;32mI (192) esp_image: segment 5: paddr=00097540 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (201) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (201) boot: Disabling RNG early entropy source...[0m
+[0;32mI (211) cpu_start: Multicore app[0m
+[0;32mI (221) cpu_start: Pro cpu start user code[0m
+[0;32mI (221) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) app_init: Application information:[0m
+[0;32mI (221) app_init: Project name:     nimble_gatt_server[0m
+[0;32mI (226) app_init: App version:      59094dd-dirty[0m
+[0;32mI (230) app_init: Compile time:     Mar 24 2025 16:42:32[0m
+[0;32mI (235) app_init: ELF file SHA256:  9f001b3b1...[0m
+[0;32mI (239) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (243) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (247) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (251) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (255) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (261) heap_init: At 3FCA0DE0 len 00048930 (290 KiB): RAM[0m
+[0;32mI (266) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (271) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (276) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (283) spi_flash: detected chip: generic[0m
+[0;32mI (285) spi_flash: flash io: dio[0m
+[0;33mW (288) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (301) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (307) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (314) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (332) coexist: coexist rom version e7ae62f[0m
+[0;32mI (333) main_task: Started on CPU0[0m
+[0;32mI (343) main_task: Calling app_main()[0m
+[0;32mI (343) NimBLE_GATT_Server: example configured to blink addressable led![0m
+[0;32mI (353) BLE_INIT: BT controller compile version [d752dea][0m
+[0;32mI (353) BLE_INIT: Bluetooth MAC: e8:06:90:98:b6:d6[0m
+[0;32mI (353) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (393) NimBLE_GATT_Server: nimble host task has been started![0m
+[0;32mI (393) NimBLE_GATT_Server: heart rate task has been started![0m
+[0;32mI (393) NimBLE_GATT_Server: heart rate updated to 67[0m
+[0;32mI (403) main_task: Returned from app_main()[0m
+[0;32mI (403) NimBLE: GAP procedure initiated: stop advertising.[0m
+
+[0;32mI (413) NimBLE_GATT_Server: device address: D6:B6:98:90:06:E8[0m
+[0;32mI (413) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (423) NimBLE: disc_mode=2[0m
+[0;32mI (423) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=800 adv_itvl_max=816[0m
+[0;32mI (433) NimBLE: [0m
+
+[0;32mI (433) NimBLE_GATT_Server: advertising started![0m
+[0;32mI (1403) NimBLE_GATT_Server: heart rate updated to 79[0m
+[0;32mI (2403) NimBLE_GATT_Server: heart rate updated to 73[0m
+[0;32mI (3403) NimBLE_GATT_Server: heart rate updated to 71[0m
+[0;32mI (4403) NimBLE_GATT_Server: heart rate updated to 64[0m
+[0;32mI (5083) NimBLE_GATT_Server: connection established; status=0[0m
+[0;32mI (5093) NimBLE_GATT_Server: connection handle: 1[0m
+[0;32mI (5093) NimBLE_GATT_Server: device id address: type=0, value=D6:B6:98:90:06:E8[0m
+[0;32mI (5093) NimBLE_GATT_Server: peer id address: type=1, value=C1:E4:5B:DA:B8:7A[0m
+[0;32mI (5103) NimBLE_GATT_Server: conn_itvl=24, conn_latency=0, supervision_timeout=72, encrypted=0, authenticated=0, bonded=0[0m
+
+[0;32mI (5113) NimBLE: GAP procedure initiated: [0m
+[0;32mI (5113) NimBLE: connection parameter update; conn_handle=1 itvl_min=24 itvl_max=24 latency=3 supervision_timeout=72 min_ce_len=0 max_ce_len=0[0m
+[0;32mI (5123) NimBLE: [0m
+
+[0;32mI (5243) NimBLE_GATT_Server: mtu update event; conn_handle=1 cid=4 mtu=256[0m
+[0;32mI (5403) NimBLE_GATT_Server: heart rate updated to 63[0m
+[0;32mI (5483) NimBLE_GATT_Server: subscribe event; conn_handle=1 attr_handle=8 reason=1 prevn=0 curn=0 previ=0 curi=1[0m
+[0;32mI (5483) NimBLE_GATT_Server: subscribe event; conn_handle=1 attr_handle=8[0m
+[0;32mI (5543) NimBLE_GATT_Server: connection updated; status=0[0m
+[0;32mI (5543) NimBLE_GATT_Server: connection handle: 1[0m
+[0;32mI (5543) NimBLE_GATT_Server: device id address: type=0, value=D6:B6:98:90:06:E8[0m
+[0;32mI (5543) NimBLE_GATT_Server: peer id address: type=1, value=C1:E4:5B:DA:B8:7A[0m
+[0;32mI (5553) NimBLE_GATT_Server: conn_itvl=36, conn_latency=3, supervision_timeout=72, encrypted=0, authenticated=0, bonded=0[0m
+
+[0;32mI (6403) NimBLE_GATT_Server: heart rate updated to 74[0m
+[0;32mI (7403) NimBLE_GATT_Server: heart rate updated to 67[0m
+[0;32mI (8403) NimBLE_GATT_Server: heart rate updated to 60[0m
+[0;32mI (9403) NimBLE_GATT_Server: heart rate updated to 64[0m
+[0;32mI (10403) NimBLE_GATT_Server: heart rate updated to 63[0m
+[0;32mI (11213) NimBLE_GATT_Server: characteristic write; conn_handle=1 attr_handle=20[0m
+[0;32mI (11213) NimBLE_GATT_Server: LED BLINK cycle enabled (15s ON, 45s OFF).[0m
+[0;32mI (11403) NimBLE_GATT_Server: heart rate updated to 77[0m
+[0;32mI (12403) NimBLE_GATT_Server: heart rate updated to 77[0m
+[0;32mI (13403) NimBLE_GATT_Server: heart rate updated to 66[0m
+[0;32mI (14403) NimBLE_GATT_Server: heart rate updated to 62[0m
+[0;32mI (15353) NimBLE_GATT_Server: characteristic write; conn_handle=1 attr_handle=20[0m
+[0;32mI (15353) NimBLE_GATT_Server: LED BLINK cycle disabled. LED is off.[0m
+[0;32mI (15403) NimBLE_GATT_Server: heart rate updated to 78[0m
+[0;32mI (16403) NimBLE_GATT_Server: heart rate updated to 77[0m
+[0;32mI (17403) NimBLE_GATT_Server: heart rate updated to 71[0m
+[0;32mI (18403) NimBLE_GATT_Server: heart rate updated to 68[0m
+[0;32mI (19403) NimBLE_GATT_Server: heart rate updated to 72[0m
+[0;32mI (19713) NimBLE_GATT_Server: characteristic write; conn_handle=1 attr_handle=20[0m
+[0;32mI (19713) NimBLE_GATT_Server: LED BLINK cycle enabled (15s ON, 45s OFF).[0m
+[0;32mI (20403) NimBLE_GATT_Server: heart rate updated to 61[0m
+[0;32mI (21403) NimBLE_GATT_Server: heart rate updated to 71[0m
+[0;32mI (22403) NimBLE_GATT_Server: heart rate updated to 66[0m
+[0;32mI (23403) NimBLE_GATT_Server: heart rate updated to 63[0m
+[0;32mI (24403) NimBLE_GATT_Server: heart rate updated to 70[0m
+[0;32mI (25403) NimBLE_GATT_Server: heart rate updated to 63[0m
+[0;32mI (26403) NimBLE_GATT_Server: heart rate updated to 63[0m
+[0;32mI (27403) NimBLE_GATT_Server: heart rate updated to 74[0m
+[0;32mI (28403) NimBLE_GATT_Server: heart rate updated to 68[0m
+[0;32mI (29403) NimBLE_GATT_Server: heart rate updated to 74[0m
+[0;32mI (30403) NimBLE_GATT_Server: heart rate updated to 61[0m
+[0;32mI (31403) NimBLE_GATT_Server: heart rate updated to 62[0m
+[0;32mI (32403) NimBLE_GATT_Server: heart rate updated to 79[0m
+[0;32mI (33403) NimBLE_GATT_Server: heart rate updated to 76[0m
+[0;32mI (34403) NimBLE_GATT_Server: heart rate updated to 80[0m
+[0;32mI (35403) NimBLE_GATT_Server: heart rate updated to 80[0m
+[0;32mI (36403) NimBLE_GATT_Server: heart rate updated to 77[0m
+[0;32mI (37403) NimBLE_GATT_Server: heart rate updated to 70[0m
+[0;32mI (38403) NimBLE_GATT_Server: heart rate updated to 65[0m
+[0;32mI (39403) NimBLE_GATT_Server: heart rate updated to 73[0m
+[0;32mI (40403) NimBLE_GATT_Server: heart rate updated to 74[0m
+[0;32mI (41403) NimBLE_GATT_Server: heart rate updated to 76[0m
+[0;32mI (42403) NimBLE_GATT_Server: heart rate updated to 64[0m
+[0;32mI (43403) NimBLE_GATT_Server: heart rate updated to 72[0m
+[0;32mI (44403) NimBLE_GATT_Server: heart rate updated to 68[0m
+[0;32mI (45403) NimBLE_GATT_Server: heart rate updated to 64[0m
+[0;32mI (46403) NimBLE_GATT_Server: heart rate updated to 68[0m
+[0;32mI (47403) NimBLE_GATT_Server: heart rate updated to 66[0m
+[0;32mI (48403) NimBLE_GATT_Server: heart rate updated to 76[0m
+[0;32mI (49403) NimBLE_GATT_Server: heart rate updated to 74[0m
+[0;32mI (50403) NimBLE_GATT_Server: heart rate updated to 60[0m
+[0;32mI (51403) NimBLE_GATT_Server: heart rate updated to 62[0m
+[0;32mI (52403) NimBLE_GATT_Server: heart rate updated to 61[0m
+[0;32mI (53403) NimBLE_GATT_Server: heart rate updated to 61[0m
+[0;32mI (54403) NimBLE_GATT_Server: heart rate updated to 60[0m
+[0;32mI (55403) NimBLE_GATT_Server: heart rate updated to 76[0m
+[0;32mI (56403) NimBLE_GATT_Server: heart rate updated to 67[0m
+[0;32mI (57403) NimBLE_GATT_Server: heart rate updated to 61[0m
+[0;32mI (58403) NimBLE_GATT_Server: heart rate updated to 69[0m
+[0;32mI (59403) NimBLE_GATT_Server: heart rate updated to 80[0m
+[0;32mI (60403) NimBLE_GATT_Server: heart rate updated to 70[0m
+[0;32mI (61403) NimBLE_GATT_Server: heart rate updated to 73[0m
+[0;32mI (62403) NimBLE_GATT_Server: heart rate updated to 70[0m
+[0;32mI (63403) NimBLE_GATT_Server: heart rate updated to 75[0m
+[0;32mI (64403) NimBLE_GATT_Server: heart rate updated to 69[0m
+[0;32mI (65403) NimBLE_GATT_Server: heart rate updated to 69[0m
+[0;32mI (66403) NimBLE_GATT_Server: heart rate updated to 71[0m
+[0;32mI (67403) NimBLE_GATT_Server: heart rate updated to 70[0m
+[0;32mI (68403) NimBLE_GATT_Server: heart rate updated to 66[0m
+[0;32mI (69403) NimBLE_GATT_Server: heart rate updated to 71[0m
+[0;32mI (70403) NimBLE_GATT_Server: heart rate updated to 72[0m
+[0;32mI (71403) NimBLE_GATT_Server: heart rate updated to 80[0m
+[0;32mI (72403) NimBLE_GATT_Server: heart rate updated to 63[0m
+[0;32mI (73403) NimBLE_GATT_Server: heart rate updated to 61[0m
+[0;32mI (74403) NimBLE_GATT_Server: heart rate updated to 67[0m
+[0;32mI (75403) NimBLE_GATT_Server: heart rate updated to 71[0m
+[0;32mI (76403) NimBLE_GATT_Server: heart rate updated to 75[0m
+[0;32mI (77403) NimBLE_GATT_Server: heart rate updated to 71[0m
+[0;32mI (78403) NimBLE_GATT_Server: heart rate updated to 64[0m
+[0;32mI (79403) NimBLE_GATT_Server: heart rate updated to 77[0m
+[0;32mI (80403) NimBLE_GATT_Server: heart rate updated to 60[0m
+[0;32mI (81403) NimBLE_GATT_Server: heart rate updated to 80[0m
+[0;32mI (82403) NimBLE_GATT_Server: heart rate updated to 67[0m
+[0;32mI (83403) NimBLE_GATT_Server: heart rate updated to 80[0m
+[0;32mI (84403) NimBLE_GATT_Server: heart rate updated to 62[0m
+[0;32mI (85403) NimBLE_GATT_Server: heart rate updated to 79[0m
+[0;32mI (86403) NimBLE_GATT_Server: heart rate updated to 64[0m
+[0;32mI (87403) NimBLE_GATT_Server: heart rate updated to 67[0m
+[0;32mI (88403) NimBLE_GATT_Server: heart rate updated to 62[0m
