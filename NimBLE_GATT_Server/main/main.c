@@ -9,6 +9,10 @@
 #include "gatt_svc.h"
 #include "heart_rate.h"
 #include "led.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_log.h"
+#include "ds18b20.h"
 
 /* Library function declarations */
 void ble_store_config_init(void);
@@ -78,6 +82,22 @@ static void heart_rate_task(void *param) {
     vTaskDelete(NULL);
 }
 
+void ds18b20_task(void *pvParameter)
+{
+    float temperature = 0.0;
+    // Initialize DS18B20 on GPIO_NUM_4 (change as needed)
+    ds18b20_init(GPIO_NUM_4);
+
+    while (1) {
+        if (ds18b20_read_temperature(&temperature) == ESP_OK) {
+            ESP_LOGI(TAG, "Temperature: %.2f°C", temperature);
+        } else {
+            ESP_LOGE(TAG, "Failed to read temperature!");
+        }
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
 void app_main(void) {
     /* Local variables */
     int rc;
@@ -129,5 +149,6 @@ void app_main(void) {
     /* Start NimBLE host task thread and return */
     xTaskCreate(nimble_host_task, "NimBLE Host", 4*1024, NULL, 5, NULL);
     xTaskCreate(heart_rate_task, "Heart Rate", 4*1024, NULL, 5, NULL);
+    xTaskCreate(ds18b20_task, "ds18b20_task", 4096, NULL, 5, NULL);
     return;
 }
