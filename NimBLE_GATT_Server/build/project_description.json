@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "nimble_gatt_server",
-    "project_version":    "59094dd-dirty",
+    "project_version":    "f6e4902-dirty",
     "project_path":       "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server",
     "idf_path":           "C:/Users/ankum/esp/v5.4/esp-idf",
     "build_dir":          "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build",
@@ -1210,7 +1210,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__led_strip" ],
             "file": "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/main.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/gap.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/gatt_svc.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/heart_rate_mock.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/led.c" ],
+            "sources": [ "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/main.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/ds18b20.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/ds18b20_old.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/gap.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/gatt_svc.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/heart_rate_mock.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/led.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/owb.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/owb_gpio.c", "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main/src/owb_rmt.c" ],
             "include_dirs": [ "./include" ]
         },
         "mbedtls": {
