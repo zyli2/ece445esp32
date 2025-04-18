@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/Users/ankum/esp/v5.4/esp-idf/components/bootloader/subproject"
   file(MAKE_DIRECTORY "C:/Users/ankum/esp/v5.4/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader"
-  "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix"
-  "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/tmp"
-  "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src"
-  "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader"
+  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix"
+  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/tmp"
+  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src"
+  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

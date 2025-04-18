@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/managed_components/espressif__led_strip
+# Install script for directory: C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/managed_components/espressif__led_strip
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

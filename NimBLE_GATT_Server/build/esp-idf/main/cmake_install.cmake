@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ankum/OneDrive/Desktop/ECE 445/ece445esp32/NimBLE_GATT_Server/main
+# Install script for directory: C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

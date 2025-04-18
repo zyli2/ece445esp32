@@ -6,7 +6,7 @@ extern "C" {
    void app_main(void);
 }
 
-static const int oneWireBus = 18;
+static const int oneWireBus = 17;
 OneWire oneWire(oneWireBus);
 DallasTemperature sensors(&oneWire);
 
@@ -21,7 +21,7 @@ void setup() {
 }
 
 void loop() {
-  delay(5000);
+  delay(1000);
   sensors.requestTemperatures(); 
   float temperatureC = sensors.getTempCByIndex(0);
   float temperatureF = sensors.getTempFByIndex(0);

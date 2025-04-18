@@ -8,7 +8,7 @@
 #include "common.h"
 #include "heart_rate.h"
 #include "led.h"
-
+#include "motor.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -21,8 +21,9 @@ static void led_blink_task(void *arg)
         if (s_led_blink_active) {
             // Turn LED on for 15s
             led_on();
+            motor_on();
             bool is_off = false;
-            for (int i = 0; i < 15; i++) {
+            for (int i = 0; i < 3; i++) {
                 vTaskDelay(pdMS_TO_TICKS(1000));
                 if (!s_led_blink_active) {
                     is_off = true;
@@ -34,8 +35,8 @@ static void led_blink_task(void *arg)
             }
         
             // Turn LED off for 45s
-            led_off();
-            vTaskDelay(pdMS_TO_TICKS(45000));
+            motor_off();
+            vTaskDelay(pdMS_TO_TICKS(27000));
         } else {
             led_off();
             vTaskDelay(pdMS_TO_TICKS(1000));
