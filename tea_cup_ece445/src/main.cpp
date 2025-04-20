@@ -3,40 +3,54 @@
 #include <DallasTemperature.h>
 
 extern "C" {
-   void app_main(void);
+  #include "freertos/FreeRTOS.h"
+  #include "freertos/task.h"
+  void gpio_console_start(void);   // from gpio_console.c
 }
 
 static const int oneWireBus = 17;
 OneWire oneWire(oneWireBus);
 DallasTemperature sensors(&oneWire);
 
-void setup() {
+/*----------------------------------------------------------------------
+ * Arduino‑style setup / loop
+ *----------------------------------------------------------------------*/
+void setup()
+{
   Serial.begin(115200);
+
   sensors.begin();
   Serial.print("Number of sensors = ");
   Serial.println(sensors.getDeviceCount());
   Serial.print("Parasite mode = ");
   Serial.println(sensors.isParasitePowerMode());
-  // sensors.isParasitePowerMode(true);
+
+  Serial.println("Starting CLI …");
+  gpio_console_start();           // spawns CLI task, returns immediately
 }
 
-void loop() {
+void loop()
+{
   delay(1000);
-  sensors.requestTemperatures(); 
+
+  sensors.requestTemperatures();
   float temperatureC = sensors.getTempCByIndex(0);
   float temperatureF = sensors.getTempFByIndex(0);
-  Serial.print(temperatureC);
-  Serial.println(" C");
-  Serial.print(temperatureF);
-  Serial.println(" F");
-  // delay(5000);
+
+  Serial.printf("%.2f °C\n", temperatureC);
+  Serial.printf("%.2f °F\n", temperatureF);
 }
 
-void app_main(void) {
-  initArduino();
+/*----------------------------------------------------------------------
+ * Single ESP‑IDF entry‑point
+ *----------------------------------------------------------------------*/
+extern "C" void app_main(void)
+{
+  initArduino();                  // initialise Arduino core
   setup();
-  while (true) {
+  for (;;)
+  {
     loop();
-    vTaskDelay(pdMS_TO_TICKS(1));
+    vTaskDelay(pdMS_TO_TICKS(1)); // yield to other tasks
   }
 }
