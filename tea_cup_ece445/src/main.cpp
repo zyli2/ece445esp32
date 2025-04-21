@@ -54,3 +54,8 @@ extern "C" void app_main(void)
     vTaskDelay(pdMS_TO_TICKS(1)); // yield to other tasks
   }
 }
+
+extern "C" float get_latest_temp() {
+  sensors.requestTemperatures();
+  return sensors.getTempCByIndex(0);
+}
