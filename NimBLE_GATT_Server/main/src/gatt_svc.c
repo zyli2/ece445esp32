@@ -35,10 +35,12 @@ static void led_blink_task(void *arg)
             }
         
             // Turn LED off for 45s
+            led_off();
             motor_off();
             vTaskDelay(pdMS_TO_TICKS(27000));
         } else {
             led_off();
+            motor_off();
             vTaskDelay(pdMS_TO_TICKS(1000));
         }
     }
@@ -305,7 +307,7 @@ int gatt_svc_init(void) {
         xTaskCreate(
             led_blink_task,
             "led_blink_task",
-            2048,
+            20000,
             NULL,
             5,
             &s_led_blink_task_handle

@@ -14,7 +14,7 @@
 #include "driver/uart.h"
 #include "stdbool.h"
 
-#define GPIO_OUTPUT_PIN_MOTOR 37
+#define GPIO_OUTPUT_PIN_MOTOR 39
 static int motor_state = 0;
 static int gpio_configured = 0;
 

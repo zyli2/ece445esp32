@@ -14,7 +14,7 @@
     if (!gpio_configured) {
         configure_gpio();
     }
-     set_gpio_level(1);
+     set_motor_level(1);
      motor_state = 1;
      return 0;
  }
@@ -24,7 +24,7 @@
     if (!gpio_configured) {
         configure_gpio();
     }
-     set_gpio_level(0);
+     set_motor_level(0);
      motor_state = 0;
      return 0;
  }
