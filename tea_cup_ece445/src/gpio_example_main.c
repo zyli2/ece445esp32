@@ -12,7 +12,9 @@
 #include "linenoise/linenoise.h"
 #include "driver/uart.h"
 
-#define GPIO_OUTPUT_PIN 18
+// motor 39, heater 18, sensor 17
+
+#define GPIO_OUTPUT_PIN 39
 static const char *TAG = "heater_cli";
 static int heat_state = 0;
 static float temp_threshold = 100.0; // Set high so heater stays off until user sets
@@ -92,7 +94,14 @@ void gpio_console_start(void)
         .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
         .source_clk = UART_SCLK_XTAL,
     };
-    ESP_ERROR_CHECK(uart_driver_install(UART_NUM_0, 256, 0, 0, NULL, 0));
+
+    // Fix: Safely install UART driver
+    // esp_err_t err = uart_driver_install(UART_NUM_0, 256, 0, 0, NULL, 0);
+    // if (err != ESP_OK && err != ESP_ERR_INVALID_STATE) {
+    //     ESP_LOGE(TAG, "Failed to install UART driver: %s", esp_err_to_name(err));
+    //     abort();
+    // }
+
     ESP_ERROR_CHECK(uart_param_config(UART_NUM_0, &uart_cfg));
     esp_vfs_dev_uart_use_driver(UART_NUM_0);
 
@@ -118,6 +127,6 @@ void gpio_console_start(void)
     ESP_ERROR_CHECK(esp_console_cmd_register(&set_temp_cmd));
 
     ESP_LOGI(TAG, "CLI + heater control tasks starting…");
-    xTaskCreate(gpio_console_loop, "gpio_cli", 4096, NULL, 5, NULL);
-    xTaskCreate(heater_control_task, "heater_control", 2048, NULL, 5, NULL);
+    xTaskCreate(gpio_console_loop, "gpio_cli", 20000, NULL, 5, NULL);
+    xTaskCreate(heater_control_task, "heater_control", 20000, NULL, 5, NULL);
 }

@@ -5,14 +5,14 @@
 #include "heater.h"
 #include "esp_log.h"
 
-static const char *TAG = "temp_ctrl";
+static const char *TAGtc = "temp_ctrl";
 
 static float target_temperature = -100.0f;
 static TaskHandle_t temp_control_task_handle = NULL;
 
 void temperature_control_set_target(float target) {
     target_temperature = target;
-    ESP_LOGI(TAG, "Target temperature set to: %.2f °C", target);
+    ESP_LOGI(TAGtc, "Target temperature set to: %.2f °C", target);
 }
 
 float temperature_control_get_target(void) {
@@ -27,10 +27,10 @@ static void temperature_control_task(void *arg) {
         if (target != -100.0f) {
             if (current_temp < target - 0.5f) {
                 heater_on();
-                ESP_LOGI(TAG, "Heater ON (current=%.2f < target=%.2f)", current_temp, target);
+                ESP_LOGI(TAGtc, "Heater ON (current=%.2f < target=%.2f)", current_temp, target);
             } else if (current_temp > target + 0.5f) {
                 heater_off();
-                ESP_LOGI(TAG, "Heater OFF (current=%.2f > target=%.2f)", current_temp, target);
+                ESP_LOGI(TAGtc, "Heater OFF (current=%.2f > target=%.2f)", current_temp, target);
             }
         }
 
