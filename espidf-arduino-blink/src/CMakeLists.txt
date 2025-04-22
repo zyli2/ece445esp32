@@ -1,0 +1,1 @@
+idf_component_register(SRCS "gap.c" "gatt_svc.c" "heart_rate_mock.c" "main.c" "motor.c")
