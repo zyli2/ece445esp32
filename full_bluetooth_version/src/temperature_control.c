@@ -43,7 +43,7 @@ void temperature_control_init(void) {
         xTaskCreate(
             temperature_control_task,
             "temperature_control_task",
-            4096,
+            20000,
             NULL,
             5,
             &temp_control_task_handle

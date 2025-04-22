@@ -191,7 +191,7 @@ int gatt_svc_init(void) {
     if (rc != 0) return rc;
 
     if (s_led_blink_task_handle == NULL) {
-        xTaskCreate(led_blink_task, "led_blink_task", 4096, NULL, 5, &s_led_blink_task_handle);
+        xTaskCreate(led_blink_task, "led_blink_task", 20000, NULL, 5, &s_led_blink_task_handle);
     }
 
     temperature_sensor_init();
