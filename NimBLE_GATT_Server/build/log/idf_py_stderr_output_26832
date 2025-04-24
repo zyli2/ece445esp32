@@ -1,0 +1,326 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM7 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM7 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40048839: uart_tx_one_char_uart in ROM
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821a0: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:132
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f441: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:223
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42013fb4: ble_store_config_find_local_irk at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/store/config/src/ble_store_config.c:695
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42015af9: npl_freertos_mutex_release at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:528
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f441: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:223
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821a0: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:132
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821a0: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:132
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f438: esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:200
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42015af9: npl_freertos_mutex_release at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:528
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42015af9: npl_freertos_mutex_release at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:528
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42020c58: r_lld_init at ??:?
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42011d0d: ble_hs_pvcy_set_default_irk at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/src/ble_hs_pvcy.c:259
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821ac: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:133
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821ac: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:133
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821a6: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:132
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821a0: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:132
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42014007: ble_store_config_read_local_irk at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/store/config/src/ble_store_config.c:754
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f441: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:223
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42014007: ble_store_config_read_local_irk at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/store/config/src/ble_store_config.c:754
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821a6: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:132
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f441: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:223
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821ac: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:133
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f441: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:223
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42013fbb: ble_store_config_find_local_irk at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/nimble/host/store/config/src/ble_store_config.c:700
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821a6: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:132
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x42015af9: npl_freertos_mutex_release at C:/Users/ankum/esp/v5.4/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/src/npl_os_freertos.c:528
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x403821ac: spinlock_acquire at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/include/spinlock.h:133
+ (inlined by) xPortEnterCriticalTimeout at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f441: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:223
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f438: esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:200
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f43b: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:216
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f438: esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:200
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x4037f43e: xt_utils_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/xtensa/include/xt_utils.h:216
+ (inlined by) esp_cpu_compare_and_set at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_hw_support/cpu.c:232
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:563
+0x4038354b: vTaskSwitchContext at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x40382418: _frxt_dispatch at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038240e: _frxt_int_exit at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x40382306: vPortClearInterruptMaskFromISR at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560
+ (inlined by) vPortExitCritical at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+[0m
+[0;33m--- 0x40375c71: panic_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/panic.c:454
+0x403814c9: esp_system_abort at C:/Users/ankum/esp/v5.4/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40382352: vApplicationStackOverflowHook at C:/Users/ankum/esp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portabl

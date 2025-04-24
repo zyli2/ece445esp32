@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "led_strip_interface.h": "c",
+        "gatt_svc.h": "c"
+    }
+}
