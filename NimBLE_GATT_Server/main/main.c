@@ -25,7 +25,7 @@
 
 /* ─────────────────────────────── Compile-time opts ────────────────────────── */
 #ifndef CONFIG_ONE_WIRE_GPIO
-#define CONFIG_ONE_WIRE_GPIO 10        // change in menuconfig if desired
+#define CONFIG_ONE_WIRE_GPIO 4        // change in menuconfig if desired
 #endif
 #define MAX_SENSORS        8
 #define DS18B20_RES        DS18B20_RESOLUTION_12_BIT
@@ -79,7 +79,7 @@ typedef struct {
 static OneWireBus *init_onewire(int gpio)
 {
     static owb_rmt_driver_info rmt;              /* static – persists forever */
-    OneWireBus *bus = owb_rmt_initialize(&rmt, gpio, RMT_CHANNEL_1, RMT_CHANNEL_0);
+    OneWireBus *bus = owb_rmt_initialize(&rmt, gpio, RMT_CHANNEL_0, RMT_CHANNEL_4);
     owb_use_crc(bus, true);
     ESP_LOGI("OWB", "1-Wire bus on GPIO %d", gpio);
     return bus;

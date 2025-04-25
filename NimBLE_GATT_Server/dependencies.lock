@@ -2,16 +2,16 @@ dependencies:
   espressif/led_strip:
     dependencies: []
     source:
-      path: C:\Users\19496\ece445esp32\NimBLE_GATT_Server\components\espressif__led_strip
+      path: C:\Users\Owner\ece445esp32\NimBLE_GATT_Server\components\espressif__led_strip
       type: local
     version: 2.5.5
   idf:
     source:
       type: idf
-    version: 5.4.1
+    version: 5.4.0
 direct_dependencies:
 - espressif/led_strip
 - idf
-manifest_hash: 5f7bb06ba8507929340ae52c7dc24dae0953b86e8c650b494972bee0397ebb2a
-target: esp32
+manifest_hash: 43f604f30539c18baa5e79cf34ecd443d834e12e0dff8c76e8052e4f0eeb8fe7
+target: esp32s3
 version: 2.0.0

@@ -41,7 +41,7 @@ static void heater_control_task(void *arg)
         } else if (temp >= temp_threshold && heat_state == 1) {
             set_gpio_level(0);
             heat_state = 0;
-            ESP_LOGI(TAG, "Heater OFF");
+                ESP_LOGI(TAG, "Heater OFF");
         }
 
         vTaskDelay(pdMS_TO_TICKS(15000)); // every 15 seconds

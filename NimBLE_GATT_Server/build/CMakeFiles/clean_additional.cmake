@@ -18,7 +18,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "ldgen_libraries.in"
   "nimble_gatt_server.bin"
   "nimble_gatt_server.map"
-  "project_elf_src_esp32.c"
+  "project_elf_src_esp32s3.c"
   "x509_crt_bundle.S"
   )
 endif()
