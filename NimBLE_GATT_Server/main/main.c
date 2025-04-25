@@ -1,380 +1,183 @@
 /*
  * SPDX-FileCopyrightText: 2024 Espressif Systems (Shanghai) CO LTD
- *
  * SPDX-License-Identifier: Unlicense OR CC0-1.0
  */
-/* Includes */
 #include "common.h"
 #include "gap.h"
 #include "gatt_svc.h"
 #include "heart_rate.h"
 #include "led.h"
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
-// #include "ds18b20.h"
+#include "nvs_flash.h"
+#include "nimble/nimble_port.h"
+#include "nimble/nimble_port_freertos.h"
+#include "host/ble_hs.h"
+#include "services/gap/ble_svc_gap.h"
+#include "services/gatt/ble_svc_gatt.h"
 
-/* Library function declarations */
+/* ───────────────────────────────── DS18B20 includes ───────────────────────── */
+#include "owb.h"
+#include "owb_rmt.h"
+#include "ds18b20.h"
+
+/* ─────────────────────────────── Compile-time opts ────────────────────────── */
+#ifndef CONFIG_ONE_WIRE_GPIO
+#define CONFIG_ONE_WIRE_GPIO 10        // change in menuconfig if desired
+#endif
+#define MAX_SENSORS        8
+#define DS18B20_RES        DS18B20_RESOLUTION_12_BIT
+#define TEMP_PERIOD_MS     1000
+
+/* ────────────────────────────── Forward prototypes ────────────────────────── */
+static void nimble_host_task(void *param);
+static void heart_rate_task(void *param);
+static void ds18b20_task(void *param);
+
 void ble_store_config_init(void);
 
-/* Private function declarations */
-static void on_stack_reset(int reason);
-static void on_stack_sync(void);
-static void nimble_host_config_init(void);
-static void nimble_host_task(void *param);
-
-/* Private functions */
-/*
- *  Stack event callback functions
- *      - on_stack_reset is called when host resets BLE stack due to errors
- *      - on_stack_sync is called when host has synced with controller
- */
-static void on_stack_reset(int reason) {
-    /* On reset, print reset reason to console */
-    ESP_LOGI(TAG, "nimble stack reset, reset reason: %d", reason);
+/* ─────────────────────── NimBLE stack helper callbacks ────────────────────── */
+static void on_stack_reset(int reason)
+{
+    ESP_LOGI(TAG, "NimBLE stack reset, reason=%d", reason);
 }
-
-static void on_stack_sync(void) {
-    /* On stack sync, do advertising initialization */
-    adv_init();
+static void on_stack_sync(void)
+{
+    adv_init();         /* start advertising after host/controller sync */
 }
-
-static void nimble_host_config_init(void) {
-    /* Set host callbacks */
-    ble_hs_cfg.reset_cb = on_stack_reset;
-    ble_hs_cfg.sync_cb = on_stack_sync;
+static void nimble_host_config_init(void)
+{
+    ble_hs_cfg.reset_cb          = on_stack_reset;
+    ble_hs_cfg.sync_cb           = on_stack_sync;
     ble_hs_cfg.gatts_register_cb = gatt_svr_register_cb;
-    ble_hs_cfg.store_status_cb = ble_store_util_status_rr;
-
-    /* Store host configuration */
+    ble_hs_cfg.store_status_cb   = ble_store_util_status_rr;
     ble_store_config_init();
 }
 
-static void nimble_host_task(void *param) {
-    /* Task entry log */
-    ESP_LOGI(TAG, "nimble host task has been started!");
-
-    /* This function won't return until nimble_port_stop() is executed */
-    nimble_port_run();
-
-    /* Clean up at exit */
-    vTaskDelete(NULL);
-}
-
-static void heart_rate_task(void *param) {
-    /* Task entry log */
-    ESP_LOGI(TAG, "heart rate task has been started!");
-
-    /* Loop forever */
-    while (1) {
-        /* Update heart rate value every 1 second */
+/* ───────────────────────────── Heart-Rate task ────────────────────────────── */
+static void heart_rate_task(void *param)
+{
+    ESP_LOGI(TAG, "Heart-Rate task started");
+    while (true) {
         update_heart_rate();
-        ESP_LOGI(TAG, "heart rate updated to %d", get_heart_rate());
-
-        /* Send heart rate indication if enabled */
+        ESP_LOGI(TAG, "Heart-Rate = %d bpm", get_heart_rate());
         send_heart_rate_indication();
-
-        /* Sleep */
         vTaskDelay(HEART_RATE_TASK_PERIOD);
     }
-
-    /* Clean up at exit */
-    vTaskDelete(NULL);
 }
 
-// void ds18b20_task(void *pvParameter)
-// {
-//     float temperature = 0.0;
-//     // Initialize DS18B20 on GPIO_NUM_4 (change as needed)
-//     ds18b20_init(GPIO_NUM_4);
+/* ───────────────────────────── DS18B20 helpers ────────────────────────────── */
+typedef struct {
+    OneWireBus        *bus;
+    OneWireBus_ROMCode roms[MAX_SENSORS];
+    DS18B20_Info      *sensors[MAX_SENSORS];
+    int                count;
+} TempCtx;
 
-//     while (1) {
-//         if (ds18b20_read_temperature(&temperature) == ESP_OK) {
-//             ESP_LOGI(TAG, "Temperature: %.2f°C", temperature);
-//         } else {
-//             ESP_LOGE(TAG, "Failed to read temperature!");
-//         }
-//         vTaskDelay(pdMS_TO_TICKS(1000));
-//     }
-// }
+static OneWireBus *init_onewire(int gpio)
+{
+    static owb_rmt_driver_info rmt;              /* static – persists forever */
+    OneWireBus *bus = owb_rmt_initialize(&rmt, gpio, RMT_CHANNEL_1, RMT_CHANNEL_0);
+    owb_use_crc(bus, true);
+    ESP_LOGI("OWB", "1-Wire bus on GPIO %d", gpio);
+    return bus;
+}
 
-void app_main(void) {
-    /* Local variables */
-    int rc;
-    esp_err_t ret;
+static int discover_devices(OneWireBus *bus, OneWireBus_ROMCode *out)
+{
+    OneWireBus_SearchState st = {0};
+    bool found; int n = 0;
+    owb_search_first(bus, &st, &found);
+    while (found && n < MAX_SENSORS) {
+        out[n++] = st.rom_code;
+        owb_search_next(bus, &st, &found);
+    }
+    ESP_LOGI("OWB", "Discovered %d DS18B20 sensor%s", n, n==1 ? "" : "s");
+    return n;
+}
 
-    /* LED initialization */
+static void init_sensor(DS18B20_Info *info, OneWireBus *bus,
+                        const OneWireBus_ROMCode *rom, bool solo)
+{
+    solo ? ds18b20_init_solo(info, bus)
+         : ds18b20_init(info, bus, *rom);
+    ds18b20_use_crc(info, true);
+    ds18b20_set_resolution(info, DS18B20_RES);
+}
+
+/* ───────────────────────────── DS18B20 task ──────────────────────────────── */
+static void ds18b20_task(void *param)
+{
+    /* tiny delay to be nice to the power-up caps on VDD */
+    vTaskDelay(pdMS_TO_TICKS(2000));
+
+    TempCtx ctx = {0};
+    ctx.bus   = init_onewire(CONFIG_ONE_WIRE_GPIO);
+    ctx.count = discover_devices(ctx.bus, ctx.roms);
+
+    if (ctx.count == 0) {
+        ESP_LOGW("DS18B20", "No sensors found – rebooting in 5 s");
+        vTaskDelay(pdMS_TO_TICKS(5000));
+        esp_restart();
+    }
+
+    for (int i = 0; i < ctx.count; ++i) {
+        ctx.sensors[i] = ds18b20_malloc();
+        init_sensor(ctx.sensors[i], ctx.bus, &ctx.roms[i], ctx.count == 1);
+    }
+
+    int err[MAX_SENSORS] = {0};
+    int sample = 0;
+    TickType_t wake = xTaskGetTickCount();
+
+    ESP_LOGI("DS18B20", "Temperature task started");
+    for (;;) {
+        ds18b20_convert_all(ctx.bus);
+        ds18b20_wait_for_conversion(ctx.sensors[0]);
+
+        ESP_LOGI("TEMP", "Sample %d", ++sample);
+        for (int i = 0; i < ctx.count; ++i) {
+            float t;
+            DS18B20_ERROR e = ds18b20_read_temp(ctx.sensors[i], &t);
+            if (e) err[i]++;
+            ESP_LOGI("TEMP", "Sensor %d: %.2f °C (errors %d)", i, t, err[i]);
+        }
+        vTaskDelayUntil(&wake, pdMS_TO_TICKS(TEMP_PERIOD_MS));
+    }
+}
+
+/* ───────────────────────────────── app_main ───────────────────────────────── */
+void app_main(void)
+{
+    /* LED (optional) */
     led_init();
 
-    /*
-     * NVS flash initialization
-     * Dependency of BLE stack to store configurations
-     */
-    ret = nvs_flash_init();
+    /* ── NVS (required by NimBLE) ── */
+    esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES ||
         ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         ESP_ERROR_CHECK(nvs_flash_erase());
-        ret = nvs_flash_init();
-    }
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "failed to initialize nvs flash, error code: %d ", ret);
-        return;
+        ESP_ERROR_CHECK(nvs_flash_init());
     }
 
-    /* NimBLE stack initialization */
-    ret = nimble_port_init();
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "failed to initialize nimble stack, error code: %d ",
-                 ret);
-        return;
-    }
-
-    /* GAP service initialization */
-    rc = gap_init();
-    if (rc != 0) {
-        ESP_LOGE(TAG, "failed to initialize GAP service, error code: %d", rc);
-        return;
-    }
-
-    /* GATT server initialization */
-    rc = gatt_svc_init();
-    if (rc != 0) {
-        ESP_LOGE(TAG, "failed to initialize GATT server, error code: %d", rc);
-        return;
-    }
-
-    /* NimBLE host configuration initialization */
+    /* ── NimBLE stack ── */
+    ESP_ERROR_CHECK(nimble_port_init());
+    ESP_ERROR_CHECK(gap_init());
+    ESP_ERROR_CHECK(gatt_svc_init());
     nimble_host_config_init();
 
-    /* Start NimBLE host task thread and return */
-    xTaskCreate(nimble_host_task, "NimBLE Host", 4*1024, NULL, 5, NULL);
-    xTaskCreate(heart_rate_task, "Heart Rate", 4*1024, NULL, 5, NULL);
-    // xTaskCreate(ds18b20_task, "ds18b20_task", 4096, NULL, 5, NULL);
-    return;
+    /* ── Create tasks ── */
+    xTaskCreate(nimble_host_task, "NimBLE Host", 4096, NULL, 5, NULL);
+    xTaskCreate(heart_rate_task , "Heart Rate" , 4096, NULL, 5, NULL);
+    xTaskCreate(ds18b20_task    , "DS18B20"    , 4096, NULL, 5, NULL);
 }
 
-
-/*
- * MIT License
- *
- * Copyright (c) 2017 David Antliff
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
-//  */
-
-//  #include "freertos/FreeRTOS.h"
-//  #include "freertos/task.h"
-//  #include "esp_system.h"
-//  #include "esp_log.h"
- 
-//  #include "owb.h"
-//  #include "owb_rmt.h"
-//  #include "ds18b20.h"
- 
-//  #define GPIO_DS18B20_0       (CONFIG_ONE_WIRE_GPIO)
-//  #define MAX_DEVICES          (8)
-//  #define DS18B20_RESOLUTION   (DS18B20_RESOLUTION_12_BIT)
-//  #define SAMPLE_PERIOD        (1000)   // milliseconds
- 
-//  _Noreturn void app_main()
-//  {
-//      // Override global log level
-//      esp_log_level_set("*", ESP_LOG_INFO);
- 
-//      // To debug, use 'make menuconfig' to set default Log level to DEBUG, then uncomment:
-//      //esp_log_level_set("owb", ESP_LOG_DEBUG);
-//      //esp_log_level_set("ds18b20", ESP_LOG_DEBUG);
- 
-//      // Stable readings require a brief period before communication
-//      vTaskDelay(2000.0 / portTICK_PERIOD_MS);
- 
-//      // Create a 1-Wire bus, using the RMT timeslot driver
-//      OneWireBus * owb;
-//      owb_rmt_driver_info rmt_driver_info;
-//      owb = owb_rmt_initialize(&rmt_driver_info, GPIO_DS18B20_0, RMT_CHANNEL_1, RMT_CHANNEL_0);
-//      owb_use_crc(owb, true);  // enable CRC check for ROM code
- 
-//      // Find all connected devices
-//      printf("Find devices:\n");
-//      OneWireBus_ROMCode device_rom_codes[MAX_DEVICES] = {0};
-//      int num_devices = 0;
-//      OneWireBus_SearchState search_state = {0};
-//      bool found = false;
-//      owb_search_first(owb, &search_state, &found);
-//      while (found)
-//      {
-//          char rom_code_s[17];
-//          owb_string_from_rom_code(search_state.rom_code, rom_code_s, sizeof(rom_code_s));
-//          printf("  %d : %s\n", num_devices, rom_code_s);
-//          device_rom_codes[num_devices] = search_state.rom_code;
-//          ++num_devices;
-//          owb_search_next(owb, &search_state, &found);
-//      }
-//      printf("Found %d device%s\n", num_devices, num_devices == 1 ? "" : "s");
- 
-//      // In this example, if a single device is present, then the ROM code is probably
-//      // not very interesting, so just print it out. If there are multiple devices,
-//      // then it may be useful to check that a specific device is present.
- 
-//      if (num_devices == 1)
-//      {
-//          // For a single device only:
-//          OneWireBus_ROMCode rom_code;
-//          owb_status status = owb_read_rom(owb, &rom_code);
-//          if (status == OWB_STATUS_OK)
-//          {
-//              char rom_code_s[OWB_ROM_CODE_STRING_LENGTH];
-//              owb_string_from_rom_code(rom_code, rom_code_s, sizeof(rom_code_s));
-//              printf("Single device %s present\n", rom_code_s);
-//          }
-//          else
-//          {
-//              printf("An error occurred reading ROM code: %d", status);
-//          }
-//      }
-//      else
-//      {
-//          // Search for a known ROM code (LSB first):
-//          // For example: 0x1502162ca5b2ee28
-//          OneWireBus_ROMCode known_device = {
-//              .fields.family = { 0x28 },
-//              .fields.serial_number = { 0xee, 0xb2, 0xa5, 0x2c, 0x16, 0x02 },
-//              .fields.crc = { 0x15 },
-//          };
-//          char rom_code_s[OWB_ROM_CODE_STRING_LENGTH];
-//          owb_string_from_rom_code(known_device, rom_code_s, sizeof(rom_code_s));
-//          bool is_present = false;
- 
-//          owb_status search_status = owb_verify_rom(owb, known_device, &is_present);
-//          if (search_status == OWB_STATUS_OK)
-//          {
-//              printf("Device %s is %s\n", rom_code_s, is_present ? "present" : "not present");
-//          }
-//          else
-//          {
-//              printf("An error occurred searching for known device: %d", search_status);
-//          }
-//      }
- 
-//      // Create DS18B20 devices on the 1-Wire bus
-//      DS18B20_Info * devices[MAX_DEVICES] = {0};
-//      for (int i = 0; i < num_devices; ++i)
-//      {
-//          DS18B20_Info * ds18b20_info = ds18b20_malloc();  // heap allocation
-//          devices[i] = ds18b20_info;
- 
-//          if (num_devices == 1)
-//          {
-//              printf("Single device optimisations enabled\n");
-//              ds18b20_init_solo(ds18b20_info, owb);          // only one device on bus
-//          }
-//          else
-//          {
-//              ds18b20_init(ds18b20_info, owb, device_rom_codes[i]); // associate with bus and device
-//          }
-//          ds18b20_use_crc(ds18b20_info, true);           // enable CRC check on all reads
-//          ds18b20_set_resolution(ds18b20_info, DS18B20_RESOLUTION);
-//      }
- 
-//  //    // Read temperatures from all sensors sequentially
-//  //    while (1)
-//  //    {
-//  //        printf("\nTemperature readings (degrees C):\n");
-//  //        for (int i = 0; i < num_devices; ++i)
-//  //        {
-//  //            float temp = ds18b20_get_temp(devices[i]);
-//  //            printf("  %d: %.3f\n", i, temp);
-//  //        }
-//  //        vTaskDelay(1000 / portTICK_PERIOD_MS);
-//  //    }
- 
-//      // Check for parasitic-powered devices
-//      bool parasitic_power = false;
-//      ds18b20_check_for_parasite_power(owb, &parasitic_power);
-//      if (parasitic_power) {
-//          printf("Parasitic-powered devices detected");
-//      }
- 
-//      // In parasitic-power mode, devices cannot indicate when conversions are complete,
-//      // so waiting for a temperature conversion must be done by waiting a prescribed duration
-//      owb_use_parasitic_power(owb, parasitic_power);
- 
-//  #ifdef CONFIG_ENABLE_STRONG_PULLUP_GPIO
-//      // An external pull-up circuit is used to supply extra current to OneWireBus devices
-//      // during temperature conversions.
-//      owb_use_strong_pullup_gpio(owb, CONFIG_STRONG_PULLUP_GPIO);
-//  #endif
- 
-//      // Read temperatures more efficiently by starting conversions on all devices at the same time
-//      int errors_count[MAX_DEVICES] = {0};
-//      int sample_count = 0;
-//      if (num_devices > 0)
-//      {
-//          TickType_t last_wake_time = xTaskGetTickCount();
- 
-//          while (1)
-//          {
-//              ds18b20_convert_all(owb);
- 
-//              // In this application all devices use the same resolution,
-//              // so use the first device to determine the delay
-//              ds18b20_wait_for_conversion(devices[0]);
- 
-//              // Read the results immediately after conversion otherwise it may fail
-//              // (using printf before reading may take too long)
-//              float readings[MAX_DEVICES] = { 0 };
-//              DS18B20_ERROR errors[MAX_DEVICES] = { 0 };
- 
-//              for (int i = 0; i < num_devices; ++i)
-//              {
-//                  errors[i] = ds18b20_read_temp(devices[i], &readings[i]);
-//              }
- 
-//              // Print results in a separate loop, after all have been read
-//              printf("\nTemperature readings (degrees C): sample %d\n", ++sample_count);
-//              for (int i = 0; i < num_devices; ++i)
-//              {
-//                  if (errors[i] != DS18B20_OK)
-//                  {
-//                      ++errors_count[i];
-//                  }
- 
-//                  printf("  %d: %.1f    %d errors\n", i, readings[i], errors_count[i]);
-//              }
- 
-//              vTaskDelayUntil(&last_wake_time, SAMPLE_PERIOD / portTICK_PERIOD_MS);
-//          }
-//      }
-//      else
-//      {
-//          printf("\nNo DS18B20 devices detected!\n");
-//      }
- 
-//      // clean up dynamically allocated data
-//      for (int i = 0; i < num_devices; ++i)
-//      {
-//          ds18b20_free(&devices[i]);
-//      }
-//      owb_uninitialize(owb);
- 
-//      printf("Restarting now.\n");
-//      fflush(stdout);
-//      vTaskDelay(1000 / portTICK_PERIOD_MS);
-//      esp_restart();
-//  } 
+/* ───────────────── NimBLE host FreeRTOS wrapper task ─────────────────────── */
+static void nimble_host_task(void *param)
+{
+    ESP_LOGI(TAG, "NimBLE host task running");
+    nimble_port_run();      /* blocks until nimble_port_stop() */
+    vTaskDelete(NULL);
+}

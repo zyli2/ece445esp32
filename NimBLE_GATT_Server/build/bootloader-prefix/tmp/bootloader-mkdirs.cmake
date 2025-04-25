@@ -6,22 +6,22 @@ cmake_minimum_required(VERSION 3.5)
 # If CMAKE_DISABLE_SOURCE_CHANGES is set to true and the source directory is an
 # existing directory in our source tree, calling file(MAKE_DIRECTORY) on it
 # would cause a fatal error, even though it would be a no-op.
-if(NOT EXISTS "C:/Users/ankum/esp/v5.4/esp-idf/components/bootloader/subproject")
-  file(MAKE_DIRECTORY "C:/Users/ankum/esp/v5.4/esp-idf/components/bootloader/subproject")
+if(NOT EXISTS "C:/Users/19496/esp/v5.4.1/esp-idf/components/bootloader/subproject")
+  file(MAKE_DIRECTORY "C:/Users/19496/esp/v5.4.1/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader"
-  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix"
-  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/tmp"
-  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src"
-  "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader"
+  "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix"
+  "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/tmp"
+  "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src"
+  "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/ankum/OneDrive/Desktop/ECE445/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/19496/ece445esp32/NimBLE_GATT_Server/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()
